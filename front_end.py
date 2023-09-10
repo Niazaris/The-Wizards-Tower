@@ -27,12 +27,13 @@ def main(player_name):
     layout = [
         [sg.Text(player_name, text_color="WHITE")],
         [sg.Text(player.hp, text_color="RED"), sg.Text(player.mana, text_color="BLUE")],
+        [sg.Button(image_filename='The-Wizards-Tower/red_dragon.jpg', image_size=(100, 40), border_width=0, key='-IMAGE_BUTTON-')],
         [sg.Button(button_label, key=f'-BUTTON-{index}-')
         for index, button_label in enumerate(button_labels)]
     ]
-
-    window = sg.Window("WIZARDS TOWER", layout)
+    window = sg.Window("WIZARDS TOWER", layout, size=(1024, 720))
     
+   
     while True:
         event, values = window.read()
         if event == sg.WINDOW_CLOSED or event == "EXIT GAME":
